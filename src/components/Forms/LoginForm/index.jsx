@@ -23,13 +23,17 @@ export const LoginForm = () => {
                     error={errors.email}
                     {...register("email")}
                 />
+    
                 <InputPassword
                     label="Senha"
                     id="password"
                     error={errors.password}
-                    register={...register("password")}
+                    register={register("password")}
                 />
+                <button type="submit">Entrar</button>
             </form>
+            <span>Ainda não possui uma conta?</span>
+            <button>Cadastre-se</button>
         </div>
     )
 } 

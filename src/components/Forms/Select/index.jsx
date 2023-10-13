@@ -1,9 +1,9 @@
 import { forwardRef } from "react"
 
-export const Select = forwardRef(({ error, children, ...res }, ref) => {
-
+export const Select = forwardRef(({ error, children,label, ...res }, ref) => {
     return (
         <div>
+            <label htmlFor={id}>{label}</label>
             <select {...res} ref={ref}>
                 {children}
             </select>
@@ -20,15 +20,3 @@ export const Select = forwardRef(({ error, children, ...res }, ref) => {
 
 
 
-
-
-
-{/* <div>
-<select {...register("departament")}>
-  <option value="">Selecione um setor</option>
-  <option value="ensino">Ensino</option>
-  <option value="desing">Design</option>
-  <option value="programação">Programação</option>
-</select>
-{errors.departament && <p>{errors.departament.message}</p>}
-</div> */}
