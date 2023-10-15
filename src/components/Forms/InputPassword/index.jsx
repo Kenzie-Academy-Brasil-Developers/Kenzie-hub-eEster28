@@ -14,7 +14,7 @@ export const InputPassword = ({ error, label, id, register }) => {
             <div>
                 <input {...register} id={id} type={isHidden ? "password" : "text"} />
 
-                <button onClick={() => setIsHidden(!isHidden)}>
+                <button type="button" onClick={() => setIsHidden(!isHidden)}>
                     {isHidden ? <MdVisibilityOff size={15} /> : <MdVisibility size={15} />}
                 </button>
             </div>

@@ -1,6 +1,6 @@
 import { forwardRef } from "react"
 
-export const Select = forwardRef(({ error, children,label, ...res }, ref) => {
+export const Select = forwardRef(({ error,id, children,label, ...res }, ref) => {
     return (
         <div>
             <label htmlFor={id}>{label}</label>

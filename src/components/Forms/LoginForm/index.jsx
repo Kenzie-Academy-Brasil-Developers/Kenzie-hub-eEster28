@@ -3,15 +3,29 @@ import { Input } from "../Input"
 import { loginFormSchema } from "./loginForm.schema"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputPassword } from "../InputPassword";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../../services/api";
+import { toast } from "react-toastify";
 
-export const LoginForm = () => {
+export const LoginForm = ({setUser}) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(loginFormSchema) })
 
-    const submit = (formData) => {
-        console.log(formData)
-    }
+    const navigate = useNavigate();
 
+    const submit  = async (useData) => {
+        try {
+            const { data } = await api.post("/sessions", useData);
+            setUser(data.user.name)
+            localStorage.setItem("@TOKEN", data.token);
+            navigate("/deshboard");
+            toast.success("Login realizado com sucesso!");
+        } catch (error) {
+            console.error(error);
+            toast.error("Opss! Algo deu errado!");
+        }
+    };
+    
     return (
         <div>
             <h2>Login</h2>
@@ -33,7 +47,7 @@ export const LoginForm = () => {
                 <button type="submit">Entrar</button>
             </form>
             <span>Ainda não possui uma conta?</span>
-            <button>Cadastre-se</button>
+            <button onClick={()=> navigate("/register")}>Cadastre-se</button>
         </div>
     )
 } 
