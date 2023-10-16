@@ -11,7 +11,7 @@ export const registerFormSchema= z.object({
     .regex(/(?=.*?[a-z])/, "É necessario pelo menos uma letra minúscula.")
     .regex(/(?=.*?[0-9])/, "É necessario pelo menos um número.")
     .regex(/(?=.*?[#?!@$^&*-{}<>;.~])/, "É necessario pelo menos uma caractere especial."),
-    confirmPassword: z.string().min(1,"Confirme a senha é obrigatório."),
+    confirmPassword: z.string().min(1,"Confirmar a senha é obrigatório."),
     bio:z.string().min(1,"A bio é obrigatório"),
     contact:z.string().min(1,"O contato é obrigatório"),
     course_module:z.string().min(1,"É obrigatório selecionar um módulo"),

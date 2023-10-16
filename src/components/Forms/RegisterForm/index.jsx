@@ -25,75 +25,75 @@ export const RegisterForm = () => {
             toast.error("Opss! Algo deu errado!");
         }
     };
-        return (
-            <div>
-                <h2>Crie sua conta</h2>
-                <span>Rapido e grátis, vamos nessa</span>
-                <form onSubmit={handleSubmit(userRegister)}>
+    return (
+        <div className="form_conteiner">
+            <h2 className="title">Crie sua conta</h2>
+            <span className="headline">Rapido e grátis, vamos nessa</span>
+            <form onSubmit={handleSubmit(userRegister)}>
 
-                    <Input
-                        label="Nome"
-                        id="name"
-                        type="text"
-                        placeholder="Digite aqui seu nome"
-                        error={errors.name}
-                        {...register("name")}
-                    />
+                <Input
+                    label="Nome"
+                    id="name"
+                    type="text"
+                    placeholder="Digite aqui seu nome"
+                    error={errors.name}
+                    {...register("name")}
+                />
 
-                    <Input
-                        label="Email"
-                        id="email"
-                        type="email"
-                        placeholder="Digite aqui seu email"
-                        error={errors.email}
-                        {...register("email")}
-                    />
+                <Input
+                    label="Email"
+                    id="email"
+                    type="email"
+                    placeholder="Digite aqui seu email"
+                    error={errors.email}
+                    {...register("email")}
+                />
 
-                    <InputPassword
-                        label="Senha"
-                        id="password"
-                        placeholder="Digite aqui sua senha"
-                        error={errors.password}
-                        register={register("password")}
-                    />
+                <InputPassword
+                    label="Senha"
+                    id="password"
+                    placeholder="Digite aqui sua senha"
+                    error={errors.password}
+                    register={register("password")}
+                />
 
-                    <InputPassword
-                        label="Confimar Senha"
-                        id="password"
-                        placeholder="Digite novamente sua senha"
-                        error={errors.confirmPassword}
-                        register={register("confirmPassword")}
-                    />
+                <InputPassword
+                    label="Confimar Senha"
+                    id="password"
+                    placeholder="Mais uma vez a senha"
+                    error={errors.confirmPassword}
+                    register={register("confirmPassword")}
+                />
 
-                    <Textarea
-                        label="Bio"
-                        id="bio"
-                        placeholder="Fale sobre você"
-                        error={errors.bio}
-                        {...register("bio")}
-                    />
+                <Textarea
+                    label="Bio"
+                    id="bio"
+                    placeholder="Fale sobre você"
+                    error={errors.bio}
+                    {...register("bio")}
+                />
 
-                    <Input
-                        label="Contato"
-                        id="contact"
-                        type="number"
-                        placeholder="Opção de contato"
-                        error={errors.contact}
-                        {...register("contact")}
-                    />
+                <Input
+                    label="Contato"
+                    id="contact"
+                    type="number"
+                    placeholder="Opção de contato"
+                    error={errors.contact}
+                    {...register("contact")}
+                />
 
-                    <Select label="Selecionar módulo" id="course_module " error={errors.course_module}  {...register("course_module")} >
-                        <option value="">Selecione o módulo</option>
-                        <option value="primeiro">Primeiro módulo</option>
-                        <option value="segundo">Segundo módulo</option>
-                        <option value="terceiro">Terceiro módulo</option>
-                        <option value="quarto">Quarto módulo</option>
-                        <option value="quinto">Quinto módulo</option>
-                        <option value="sexto">Sexto módulo</option>
-                    </Select>
-                    <button type="submit">Cadastrar</button>
-                </form>
+                <Select label="Selecionar módulo" id="course_module " error={errors.course_module}  {...register("course_module")} >
+                    <option value="">Selecione o módulo</option>
+                    <option value="primeiro">Primeiro módulo</option>
+                    <option value="segundo">Segundo módulo</option>
+                    <option value="terceiro">Terceiro módulo</option>
+                    <option value="quarto">Quarto módulo</option>
+                    <option value="quinto">Quinto módulo</option>
+                    <option value="sexto">Sexto módulo</option>
+                </Select>
+                <button className="btn" type="submit">Cadastrar</button>
+            </form>
 
-            </div>
-        )
-    } 
+        </div>
+    )
+} 

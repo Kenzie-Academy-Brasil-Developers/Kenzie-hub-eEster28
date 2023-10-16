@@ -1,0 +1,25 @@
+.conteiner{
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--color-grey-3);
+
+    div{
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 105px;
+            height: 15px;
+        }
+        @media (max-width: 520px) {
+            width: 100%;
+            margin: 0px 15px 0px 15px;
+           
+       }
+    }
+
+}

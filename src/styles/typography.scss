@@ -1,0 +1,37 @@
+.title{
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 700px;
+    color: var(--color-grey-0);
+
+    &.two{
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--color-grey-0);
+    }
+}
+.headline{
+    font-size: 12px;
+    color: var(--color-grey-1);
+    line-height: 22px;
+    font-weight: 400;
+
+    &.bold{
+        font-weight: 600;
+        line-height: 18px;
+    }
+}
+.paragraph{
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--color-white);
+}
+
+.error{
+    font-size: 12px;
+    color: var(--color-negative);
+    line-height: 22px;
+    font-weight: 400; 
+    margin-top: 5px;
+}

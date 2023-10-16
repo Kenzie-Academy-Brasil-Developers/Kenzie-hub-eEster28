@@ -1,0 +1,18 @@
+.conteiner{
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    div{
+        display: flex;
+        width: 414px;
+        justify-content: space-between;
+        align-items: center;
+
+        img{
+            width: 122px;
+            height: 22px;
+        }
+    }
+}

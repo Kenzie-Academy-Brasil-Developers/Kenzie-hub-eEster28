@@ -6,6 +6,7 @@ import { InputPassword } from "../InputPassword";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../services/api";
 import { toast } from "react-toastify";
+import Style from "./style.module.scss"
 
 export const LoginForm = ({setUser}) => {
 
@@ -27,13 +28,15 @@ export const LoginForm = ({setUser}) => {
     };
     
     return (
-        <div>
-            <h2>Login</h2>
+        <div className="form_conteiner ">
+            <h2 className="title">Login</h2>
+    
             <form onSubmit={handleSubmit(submit)}>
                 <Input
                     label="Email"
                     id="email"
                     type="email"
+                    placeholder="Digite seu email" 
                     error={errors.email}
                     {...register("email")}
                 />
@@ -41,13 +44,14 @@ export const LoginForm = ({setUser}) => {
                 <InputPassword
                     label="Senha"
                     id="password"
+                    placeholder="Digite sua senha" 
                     error={errors.password}
                     register={register("password")}
                 />
-                <button type="submit">Entrar</button>
+                <button className="btn" type="submit">Entrar</button>
             </form>
-            <span>Ainda não possui uma conta?</span>
-            <button onClick={()=> navigate("/register")}>Cadastre-se</button>
+            <span  className={`headline bold ${Style.span}`}>Ainda não possui uma conta?</span>
+            <button  className={`btn two ${Style.button}`} onClick={()=> navigate("/register")}>Cadastre-se</button>
         </div>
     )
 } 
