@@ -5,12 +5,11 @@ import Style from "./style.module.scss"
 export const HeaderRegister = () => {
     const navigate = useNavigate()
 
-    return(
+    return (
         <header className={Style.conteiner}>
             <div>
-            <img src={Logo} alt="Logo Kezie Hub" />
-            <button className="btn1" onClick={()=>navigate("/")}>Voltar</button>
-
+                <img src={Logo} alt="Logo Kezie Hub" />
+                <button className="btn1" onClick={() => navigate("/")}>Voltar</button>
             </div>
         </header>
     )

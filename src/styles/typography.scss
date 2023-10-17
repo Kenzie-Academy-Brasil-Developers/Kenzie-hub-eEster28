@@ -1,37 +1,37 @@
 .title{
-    font-size: 18px;
-    line-height: 28px;
-    font-weight: 700px;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 43.75rem;
     color: var(--color-grey-0);
 
     &.two{
-        font-size: 12px;
+        font-size: 0.75rem;
         font-weight: 400;
         color: var(--color-grey-0);
     }
 }
 .headline{
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--color-grey-1);
-    line-height: 22px;
+    line-height: 1.375rem;
     font-weight: 400;
 
     &.bold{
         font-weight: 600;
-        line-height: 18px;
+        line-height: 1.125rem;
     }
 }
 .paragraph{
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: 400;
     color: var(--color-white);
 }
 
 .error{
-    font-size: 12px;
+    font-size: 0.75rem;
     color: var(--color-negative);
-    line-height: 22px;
+    line-height: 1.375rem;
     font-weight: 400; 
-    margin-top: 5px;
+    margin-top: 0.3125rem;
 }

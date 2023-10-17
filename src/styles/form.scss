@@ -1,39 +1,41 @@
 .inp {
-    width: 329.93px;
-    height: 48px;
+    width: 20.6206rem;
+    height: 3rem;
 
-    padding: 0px 16.24px 0px 16.24px;
-    border-radius: 4px;
-    border: 1.22px solid var(--color-grey-2);
+    padding: 0rem 1.015rem 0rem 1.015rem;
+    border-radius: 0.25rem;
+    border: 0.0762rem solid var(--color-grey-2);
 
     background-color: var(--color-grey-2);
     color: var(--color-grey-1);
 
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     font-family: var(--font-family);
     resize: none;
-   
+
     &.password {
         position: relative;
     }
 
     &:focus {
-        border: 1.22px solid var(--color-grey-0);
+        border: 0.0762rem solid var(--color-grey-0);
         color: var(--color-grey-0)
     }
-    &.select{
+
+    &.select {
         width: 100%;
     }
+
     @media (max-width: 520px) {
-        width: 100%;
+        max-width: 15.875rem;
     }
 }
 
 .form_conteiner {
-    width: 370px;
-    padding: 42px 22px 42px 22px;
-    border-radius: 4px;
+    width: 23.125rem;
+    padding: 2.625rem 1.375rem 2.625rem 1.375rem;
+    border-radius: 0.25rem;
     background-color: var(--color-grey-3);
 
     display: flex;
@@ -41,30 +43,37 @@
     align-items: center;
     justify-content: center;
 
-    form{
-        margin-top: 10px;
+    form {
+        margin-top: 0.625rem;
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 0.9375rem;
 
-        div{
+        div {
             display: flex;
             flex-direction: column;
         }
+
+        @media (max-width: 520px) {
+            padding: 0rem 0.625rem 0rem 0.625rem;
+        }
     }
+
     @media (max-width: 520px) {
-        width: 295px;
+        width: 16.875rem;
+        padding: 0rem 0.625rem 0rem 0.625rem;
     }
 }
-.password_conteiner{
+
+.password_conteiner {
     position: relative;
 
-    button{
+    button {
         position: absolute;
         color: var(--color-grey-1);
         background-color: transparent;
         border: none;
-        right: 10px;
-        top: 18px;
+        right: 0.625rem;
+        top: 1.125rem;
     }
 }

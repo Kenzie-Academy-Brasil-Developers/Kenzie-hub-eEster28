@@ -1,20 +1,20 @@
 import { useForm } from "react-hook-form"
 import { Input } from "../Input"
 import { loginFormSchema } from "./loginForm.schema"
-import { zodResolver } from "@hookform/resolvers/zod";
-import { InputPassword } from "../InputPassword";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../../services/api";
-import { toast } from "react-toastify";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { InputPassword } from "../InputPassword"
+import { useNavigate } from "react-router-dom"
+import { api } from "../../../services/api"
+import { toast } from "react-toastify"
 import Style from "./style.module.scss"
 
-export const LoginForm = ({setUser}) => {
+export const LoginForm = ({ setUser }) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(loginFormSchema) })
 
     const navigate = useNavigate();
 
-    const submit  = async (useData) => {
+    const submit = async (useData) => {
         try {
             const { data } = await api.post("/sessions", useData);
             setUser(data.user.name)
@@ -26,32 +26,32 @@ export const LoginForm = ({setUser}) => {
             toast.error("Opss! Algo deu errado!");
         }
     };
-    
+
     return (
         <div className="form_conteiner ">
             <h2 className="title">Login</h2>
-    
+
             <form onSubmit={handleSubmit(submit)}>
                 <Input
                     label="Email"
                     id="email"
                     type="email"
-                    placeholder="Digite seu email" 
+                    placeholder="Digite seu email"
                     error={errors.email}
                     {...register("email")}
                 />
-    
+
                 <InputPassword
                     label="Senha"
                     id="password"
-                    placeholder="Digite sua senha" 
+                    placeholder="Digite sua senha"
                     error={errors.password}
                     register={register("password")}
                 />
                 <button className="btn" type="submit">Entrar</button>
             </form>
-            <span  className={`headline bold ${Style.span}`}>Ainda não possui uma conta?</span>
-            <button  className={`btn two ${Style.button}`} onClick={()=> navigate("/register")}>Cadastre-se</button>
+            <span className={`headline bold ${Style.span}`}>Ainda não possui uma conta?</span>
+            <button className={`btn two ${Style.button}`} onClick={() => navigate("/register")}>Cadastre-se</button>
         </div>
     )
 } 

@@ -5,7 +5,7 @@ import Style from "./style.module.scss"
 export const RegisterPage = () => {
     return (
         <div className={Style.conteiner}>
-            <HeaderRegister/>
+            <HeaderRegister />
             <main>
                 <RegisterForm />
             </main>
