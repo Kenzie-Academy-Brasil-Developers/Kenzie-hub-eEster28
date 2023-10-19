@@ -25,6 +25,9 @@
 
     &.select {
         width: 100%;
+        @media (max-width: 520px) {
+            min-width: 18rem;
+        }
     }
 
     @media (max-width: 520px) {
@@ -61,7 +64,7 @@
 
     @media (max-width: 520px) {
         width: 16.875rem;
-        padding: 0rem 0.625rem 0rem 0.625rem;
+        margin-bottom: 1rem;
     }
 }
 

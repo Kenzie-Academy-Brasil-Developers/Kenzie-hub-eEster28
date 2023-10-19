@@ -1,5 +1,5 @@
-import { useNavigate } from "react-router-dom"
-import Logo from "../../../assets/registerLogo.png"
+import { Link, useNavigate } from "react-router-dom"
+import Logo from "../../../assets/Logo.png"
 import Style from "./style.module.scss"
 
 export const HeaderRegister = () => {
@@ -9,7 +9,9 @@ export const HeaderRegister = () => {
         <header className={Style.conteiner}>
             <div>
                 <img src={Logo} alt="Logo Kezie Hub" />
-                <button className="btn1" onClick={() => navigate("/")}>Voltar</button>
+                <Link to="/">
+                    <button className="btn1">Voltar</button>
+                </Link>
             </div>
         </header>
     )

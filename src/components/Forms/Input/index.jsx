@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef } from "react"
 
 export const Input = forwardRef(({ error, label, id, ...rest }, ref) => {
     return (
@@ -9,5 +9,5 @@ export const Input = forwardRef(({ error, label, id, ...rest }, ref) => {
             <input className="inp" ref={ref} {...rest} />
             {error ? <p className="error">{error.message}</p> : null}
         </div>
-    );
-});
+    )
+})

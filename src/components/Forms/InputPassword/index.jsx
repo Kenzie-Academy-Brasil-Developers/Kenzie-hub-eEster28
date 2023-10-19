@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from "react"
 import { MdVisibility, MdVisibilityOff } from "react-icons/md"
 
 export const InputPassword = ({ error, label, id, register, placeholder }) => {
 
-    const [isHidden, setIsHidden] = useState(true);
+    const [isHidden, setIsHidden] = useState(true)
 
     return (
         <div>
@@ -21,6 +21,6 @@ export const InputPassword = ({ error, label, id, register, placeholder }) => {
 
             {error ? <p className="error">{error.message}</p> : null}
         </div>
-    );
-};
+    )
+}
 

@@ -3,7 +3,7 @@ import { Input } from "../Input"
 import { loginFormSchema } from "./loginForm.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { InputPassword } from "../InputPassword"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { api } from "../../../services/api"
 import { toast } from "react-toastify"
 import Style from "./style.module.scss"
@@ -12,20 +12,20 @@ export const LoginForm = ({ setUser }) => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(loginFormSchema) })
 
-    const navigate = useNavigate();
-
+    const navigate = useNavigate()
+    
     const submit = async (useData) => {
         try {
-            const { data } = await api.post("/sessions", useData);
+            const { data } = await api.post("/sessions", useData)
             setUser(data.user.name)
-            localStorage.setItem("@TOKEN", data.token);
-            navigate("/deshboard");
-            toast.success("Login realizado com sucesso!");
+            localStorage.setItem("@TOKEN", data.token)
+            navigate("/deshboard")
+            toast.success("Login realizado com sucesso!")
         } catch (error) {
-            console.error(error);
-            toast.error("Opss! Algo deu errado!");
+            console.error(error)
+            toast.error("Opss! Algo deu errado!")
         }
-    };
+    }
 
     return (
         <div className="form_conteiner ">
@@ -51,7 +51,10 @@ export const LoginForm = ({ setUser }) => {
                 <button className="btn" type="submit">Entrar</button>
             </form>
             <span className={`headline bold ${Style.span}`}>Ainda não possui uma conta?</span>
-            <button className={`btn two ${Style.button}`} onClick={() => navigate("/register")}>Cadastre-se</button>
+
+            <Link to="/register"  className="link">
+                <button className={`btn two ${Style.button}`}>Cadastre-se</button>
+            </Link>
         </div>
     )
 } 
