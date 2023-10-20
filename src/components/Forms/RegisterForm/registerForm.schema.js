@@ -6,11 +6,14 @@ export const registerFormSchema= z.object({
     password: z
     .string()
     .min(1,"Senha é obrigatória")
-    .min(8, "É necessario pelo menos oito caracteres.")
-    .regex(/(?=.*?[A-Z])/, "É necessario pelo menos uma letra maiúscula.")
-    .regex(/(?=.*?[a-z])/, "É necessario pelo menos uma letra minúscula.")
-    .regex(/(?=.*?[#?!@{}<>$^&*-])/,"É necessario pelo menos uma caractere especial.")
-    .regex(/(?=.*?[0-9])/, "É necessario pelo menos um número."),
+    .min(8, "São necessários pelo menos oito caracteres.")
+    .regex(/[a-z]+/, "É necessário conter pelo menos uma letra minúscula.")
+    .regex(/[A-Z]+/, "É necessário conter pelo menos uma letra maiúscula.")
+    .regex(/[0-9]+/, "É necessário conter pelo menos um número.")
+    .regex(
+      /[!@#$%^&*()_+{}\[\]:;<>,.?~\\-]+/,
+      "É necessário conter pelo menos um caracter especial."
+    ),
     confirmPassword: z.string().min(1,"Confirmar a senha é obrigatório."),
     bio:z.string().min(1,"A bio é obrigatório"),
     contact:z.string().min(1,"O contato é obrigatório"),

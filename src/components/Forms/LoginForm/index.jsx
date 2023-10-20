@@ -17,8 +17,8 @@ export const LoginForm = ({ setUser }) => {
     const submit = async (useData) => {
         try {
             const { data } = await api.post("/sessions", useData)
-            setUser(data.user.name)
             localStorage.setItem("@TOKEN", data.token)
+            setUser(data.user)
             navigate("/deshboard")
             toast.success("Login realizado com sucesso!")
         } catch (error) {
