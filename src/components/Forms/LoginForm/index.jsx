@@ -3,30 +3,17 @@ import { Input } from "../Input"
 import { loginFormSchema } from "./loginForm.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { InputPassword } from "../InputPassword"
-import { Link, useNavigate } from "react-router-dom"
-import { api } from "../../../services/api"
-import { toast } from "react-toastify"
+import { Link } from "react-router-dom"
 import Style from "./style.module.scss"
+import { useContext } from "react"
+import { UserContext } from "../../../providers/UserContext"
 
-export const LoginForm = ({ setUser }) => {
+export const LoginForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(loginFormSchema) })
 
-    const navigate = useNavigate()
-    
-    const submit = async (useData) => {
-        try {
-            const { data } = await api.post("/sessions", useData)
-            localStorage.setItem("@TOKEN", data.token)
-            setUser(data.user)
-            navigate("/deshboard")
-            toast.success("Login realizado com sucesso!")
-        } catch (error) {
-            console.error(error)
-            toast.error("Opss! Algo deu errado!")
-        }
-    }
-
+    const {submit} = useContext(UserContext)
+   
     return (
         <div className="form_conteiner ">
             <h2 className="title">Login</h2>

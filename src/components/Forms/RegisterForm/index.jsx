@@ -5,26 +5,14 @@ import { Select } from "../Select"
 import { Textarea } from "../Textarea"
 import { registerFormSchema } from "./registerForm.schema"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { api } from "../../../services/api"
-import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
+import { useContext } from "react"
+import { UserContext } from "../../../providers/UserContext"
 
 export const RegisterForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm({ resolver: zodResolver(registerFormSchema) })
+    const {userRegister} = useContext(UserContext)
 
-    const navigate = useNavigate()
-
-    const userRegister = async (useData) => {
-        try {
-            const { data } = await api.post("/users", useData)
-            toast.success("Conta criada com sucesso!")
-            navigate("/")
-        } catch (error) {
-            console.error(error)
-            toast.error("Opss! Algo deu errado!")
-        }
-    }
     return (
         <div className="form_conteiner">
             <h2 className="title">Crie sua conta</h2>

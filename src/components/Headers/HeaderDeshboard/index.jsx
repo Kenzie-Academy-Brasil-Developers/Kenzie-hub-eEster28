@@ -1,15 +1,11 @@
-import { useNavigate } from "react-router-dom"
 import Logo from "../../../assets/Logo.png"
 import Style from "./style.module.scss"
+import { useContext } from "react"
+import { UserContext } from "../../../providers/UserContext"
 
-export const HeaderDeshboard = ({ setUser }) => {
-    const navigate = useNavigate()
+export const HeaderDeshboard = () => {
 
-    const logout = () => {
-        localStorage.removeItem("@TOKEN")
-        setUser(null)
-        navigate("/")
-    }
+    const {logout} = useContext(UserContext)
 
     return (
         <header className={Style.conteiner}>

@@ -2,12 +2,12 @@ import { HeaderDeshboard } from "../../components/Headers/HeaderDeshboard"
 import { FeedSection } from "../../components/Sections/FeedSection"
 import { UserSection } from "../../components/Sections/UserSection"
 
-export const DeshboardPage = ({ user, setUser }) => {
+export const DeshboardPage = () => {
     return (
         <>
-            <HeaderDeshboard setUser={setUser} />
+            <HeaderDeshboard />
             <main>
-                <UserSection user={user} />
+                <UserSection/>
                 <FeedSection />
             </main>
         </>

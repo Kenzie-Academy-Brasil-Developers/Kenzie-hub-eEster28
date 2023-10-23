@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import Style from "./style.module.scss"
+import { UserContext } from "../../../providers/UserContext"
 
-export const UserSection = ({ user }) => {
+export const UserSection = () => {
+    const {user} = useContext(UserContext)
+
     return (
         <section className={Style.conteiner}>
             <div>

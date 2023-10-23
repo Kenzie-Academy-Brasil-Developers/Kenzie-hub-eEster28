@@ -5,13 +5,11 @@ import { DeshboardPage } from "../pages/DeshboardPage"
 import { useState } from "react"
 
 export const RoutesMain = () => {
-    const [user, setUser] = useState(null)
-
     return (
         <Routes>
-            <Route path="/" element={<LoginPage setUser={setUser} />} />
+            <Route path="/" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
-            <Route path="/deshboard" element={<DeshboardPage user={user} setUser={setUser} />} />
+            <Route path="/deshboard" element={<DeshboardPage/>} />
         </Routes>
     )
 }
