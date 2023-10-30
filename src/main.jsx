@@ -9,11 +9,11 @@ import { TechProvider } from './providers/TechContext.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <TechProvider>
-        <UserProvider>
+      <UserProvider>
+        <TechProvider>
           <App />
-        </UserProvider>
-      </TechProvider>
+        </TechProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

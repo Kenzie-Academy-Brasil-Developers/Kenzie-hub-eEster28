@@ -8,6 +8,7 @@ export const UserContext = createContext({})
 export const UserProvider = ({ children }) => {
 
     const [user, setUser] = useState(null)
+    const [techUser, setTechUser] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -20,19 +21,21 @@ export const UserProvider = ({ children }) => {
                     }
                 })
                 setUser(data)
+                setTechUser(data.techs)
                 navigate("/deshboard")
             } catch (error) {
                 console.error(error)
             }
         }
         getUser()
-    }, [])
+    }, []) 
 
     const submit = async (useData) => {
         try {
             const { data } = await api.post("/sessions", useData)
             localStorage.setItem("@TOKEN", data.token)
             setUser(data.user)
+            setTechUser(data.user.techs)
             navigate("/deshboard")
             toast.success("Login realizado com sucesso!")
         } catch (error) {
@@ -57,9 +60,9 @@ export const UserProvider = ({ children }) => {
         setUser(null)
         navigate("/")
     }
-
+   
     return (
-        <UserContext.Provider value={{ setUser, user, submit, userRegister, logout }}>
+        <UserContext.Provider value={{ setUser, user, submit, userRegister, logout, techUser, setTechUser }}>
             {children}
         </UserContext.Provider>
     )

@@ -1,13 +1,23 @@
 .title{
     font-size: 1.125rem;
     line-height: 1.75rem;
-    font-weight: 43.75rem;
+    font-weight: 700;
     color: var(--color-grey-0);
 
     &.two{
         font-size: 0.75rem;
         font-weight: 400;
         color: var(--color-grey-0);
+    }
+    &.three{
+        font-size: 1rem;
+        line-height: 1.125rem;
+        font-weight: 600;
+    }
+    &.four{
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        color: var(--color-white);
     }
 }
 .headline{

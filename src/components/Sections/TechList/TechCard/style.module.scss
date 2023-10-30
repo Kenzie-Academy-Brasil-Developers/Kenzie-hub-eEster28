@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    align-items: center;
+   
+
+    background-color: var(--color-grey-4);
+    border-radius: 4px;
+    padding: 15px 23px 15px 23px;
+
+    .div_conteiner {
+
+        span {
+            margin-right: 5px;
+        }
+
+        display: flex;
+        align-items: center;
+
+    }
+
+    @media (max-width: 520px) {
+        flex-direction: column;
+        align-items: start;
+        gap: 5px;
+    }
+}
