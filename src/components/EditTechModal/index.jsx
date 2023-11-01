@@ -1,8 +1,8 @@
 import { useContext } from "react"
 import { TechContext } from "../../providers/TechContext"
 import { useForm } from "react-hook-form"
-import { Input } from "../Forms/Input"
 import { Select } from "../Forms/Select"
+import { InputModal } from "../InputModal"
 
 export const EditTechModal = () => {
     const {editTechs, editingTech, setVisibleEditing} = useContext(TechContext)
@@ -14,15 +14,15 @@ export const EditTechModal = () => {
     })
 
     return(
-        <div role="dialog">
-        <div>
-          <div>
-            <h2>Tecnologia Detalhes</h2>
-            <button onClick={() => setVisibleEditing(false) }>X</button>
+        <div role="dialog" className="modalOverlar">
+        <div className="modalContainer">
+          <div className="div_title">
+            <h2 className="title four fo2">Tecnologia Detalhes</h2>
+            <button className="btn_none delete" onClick={() => setVisibleEditing(false) }>X</button>
           </div>
           <form onSubmit={handleSubmit(editTechs)}>
   
-            <Input
+            <InputModal
               label="Nome"
               id="title"
               type="text"
@@ -37,7 +37,7 @@ export const EditTechModal = () => {
               <option value="Avançado">Avançado</option>
             </Select>
   
-            <button type="submit">Salvar alterações</button>
+            <button className="btn" type="submit">Salvar alterações</button>
           </form>
         </div>
       </div>

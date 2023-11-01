@@ -58,4 +58,11 @@
     background-color: transparent;
     border: none;
     color: var(--color-white);
+    &.delete{
+        color: var(--color-grey-1);
+
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 26px;
+    }
 }

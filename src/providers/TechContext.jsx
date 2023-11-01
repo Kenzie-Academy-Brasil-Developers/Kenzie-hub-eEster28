@@ -64,7 +64,7 @@ export const TechProvider = ({ children }) => {
             })
 
             const newTechList = techUser.map(tech => {
-                if (tech.id == editingTech.id) {
+                if (tech.id === editingTech.id) {
                     return data
                 } else {
                     return tech

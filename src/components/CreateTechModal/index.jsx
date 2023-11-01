@@ -1,10 +1,10 @@
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Input } from "../Forms/Input"
 import { Select } from "../Forms/Select"
 import { createTechSchema } from "./createTechModal.schema"
 import { useContext } from "react"
 import { TechContext } from "../../providers/TechContext"
+import { InputModal } from "../InputModal"
 
 
 export const CreateTechModal = () => {
@@ -12,15 +12,15 @@ export const CreateTechModal = () => {
   const {createTech, setVisibleAdd} = useContext(TechContext)
 
   return (
-    <div role="dialog">
-      <div>
-        <div>
-          <h2>Cadastrar Tecnologia</h2>
-          <button onClick={() => setVisibleAdd(false) }>X</button>
+    <div role="dialog"  className="modalOverlar">
+      <div  className="modalContainer">
+        <div className="div_title">
+          <h2  className="title four fo2">Cadastrar Tecnologia</h2>
+          <button className="btn_none delete" onClick={() => setVisibleAdd(false) }>X</button>
         </div>
         <form onSubmit={handleSubmit(createTech)}>
 
-          <Input
+          <InputModal
             label="Nome"
             id="title"
             type="text"
@@ -36,7 +36,7 @@ export const CreateTechModal = () => {
             <option value="Avançado">Avançado</option>
           </Select>
 
-          <button type="submit">Cadastrar Tecnologia</button>
+          <button className="btn"  type="submit">Cadastrar Tecnologia</button>
         </form>
       </div>
     </div>

@@ -8,11 +8,9 @@ export const TechList = () => {
 
     return (
         <section className={style.conteiner}>
-
             <ul>
                 {techUser.map(tech => <TechCard tech={tech} key={crypto.randomUUID()} />)}
             </ul>
-
         </section>
     )
 }

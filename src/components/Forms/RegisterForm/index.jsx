@@ -72,12 +72,10 @@ export const RegisterForm = () => {
 
                 <Select label="Selecionar módulo" id="course_module " error={errors.course_module}  {...register("course_module")} >
                     <option value="">Selecione o módulo</option>
-                    <option value="Primeiro módulo">Primeiro módulo</option>
-                    <option value="Segundo módulo">Segundo módulo</option>
-                    <option value="Terceiro módulo">Terceiro módulo</option>
-                    <option value="Quarto módulo">Quarto módulo</option>
-                    <option value="Quinto módulo">Quinto módulo</option>
-                    <option value="Sexto módulo">Sexto módulo</option>
+                    <option value="Primeiro módulo (Introdução ao Frontend)">Primeiro módulo</option>
+                    <option value="Segundo módulo (Frontend Avançado)">Segundo módulo</option>
+                    <option value="Terceiro módulo (Introdução ao Backend)">Terceiro módulo</option>
+                    <option value="Quarto módulo (Backend Avançado)">Quarto módulo</option>
                 </Select>
                 <button className="btn" type="submit">Cadastrar</button>
             </form>
